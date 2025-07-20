@@ -1,25 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Cocktails from "./components/Cocktails";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
-  useEffect(() => {
-    gsap.fromTo(
-      ".text",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      }
-    );
-  }, []);
-  return <div className="text ">App</div>;
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Cocktails />
+      <div className="h-dvh bg-black"></div>
+    </main>
+  );
 };
 
 export default App;
