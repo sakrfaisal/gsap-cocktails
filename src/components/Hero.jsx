@@ -2,8 +2,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
+import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   useGSAP(() => {
     const video = document.querySelector("video");
 
@@ -47,9 +50,10 @@ const Hero = () => {
       scrollTrigger: {
         y: 1000,
         trigger: video,
-        start: "top top",
-        end: "bottom top",
+        start: isMobile ? "top 50%" : "center 60%",
+        end: isMobile ? "120% top" : "bottom top",
         scrub: true,
+        pin: true,
         onUpdate: (self) => {
           const progress = self.progress;
           const duration = video.duration || 1;
@@ -60,36 +64,40 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="noisy">
-      <h1 className="title uppercase">Mojito</h1>
+    <>
+      <section id="hero" className="noisy">
+        <h1 className="title uppercase">Mojito</h1>
 
-      <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf" />
+        <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf" />
 
-      <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf" />
+        <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf" />
 
-      <div className="body">
-        <div className="content">
-          <div className="hidden md:block space-y-5">
-            <p>Cool. Crisp. Classic.</p>
-            <p className="subtitle">
-              Sip the Spirit <br /> of Summer
-            </p>
-          </div>
-          <div className="view-cocktails text-center md:text-left">
-            <p className="subtitle">
-              Every cocktail on our menu is a <br /> blend of premium ingredients, <br /> creative
-              flair, and timeless recipes <br />— designed to delight your senses.
-            </p>
-            <a href="#cocktails" className="duration-300">
-              View Cocktails
-            </a>
+        <div className="body">
+          <div className="content">
+            <div className="hidden md:block space-y-5">
+              <p>Cool. Crisp. Classic.</p>
+              <p className="subtitle">
+                Sip the Spirit <br /> of Summer
+              </p>
+            </div>
+            <div className="view-cocktails text-center md:text-left">
+              <p className="subtitle">
+                Every cocktail on our menu is a <br /> blend of premium ingredients, <br /> creative
+                flair, and timeless recipes <br />— designed to delight your senses.
+              </p>
+              <a href="#cocktails" className="duration-300">
+                View Cocktails
+              </a>
+            </div>
           </div>
         </div>
+      </section>
+      <div className="video absolute inset-0">
+        <video muted playsInline preload="auto">
+          <source src="/videos/output.mp4" type="video/mp4" />
+        </video>
       </div>
-      {/* <video muted className="opacity-30">
-        <source src="/videos/input.mp4" type="video/mp4" />
-      </video> */}
-    </section>
+    </>
   );
 };
 

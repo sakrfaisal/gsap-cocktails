@@ -5,27 +5,17 @@ import { mockTailLists } from "../../constants/index.js";
 
 const Cocktails = () => {
   useGSAP(() => {
-    gsap
-      .timeline("#cocktails", {
-        scrollTrigger: {
-          trigger: "#cocktails",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
-      .from("#c-left-leaf", {
-        y: 100,
-        x: -100,
-      })
-      .from(
-        "#c-right-leaf",
-        {
-          y: 100,
-          x: 100,
-        },
-        0
-      );
+    const cocktailsTm = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#cocktails",
+        start: "top 30%",
+        end: "bottom 80%",
+        scrub: true,
+      },
+    });
+
+    cocktailsTm.from("#c-right-leaf", { y: 100, x: 100 }, 0);
+    cocktailsTm.from("#c-left-leaf", { y: 100, x: -100 }, 0);
   });
 
   return (
