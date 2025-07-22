@@ -21,8 +21,8 @@ const Art = () => {
 
     tm.to(".will-fade", {
       opacity: 0,
-      duration: 1.8,
-      stagger: 1.8,
+      duration: 1,
+      stagger: 1,
       ease: "power2.inOut",
     });
 
