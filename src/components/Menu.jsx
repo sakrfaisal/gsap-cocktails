@@ -1,8 +1,10 @@
 import { sliderLists } from "../../constants/index";
 import { useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Menu = () => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(0);
 
   function handleArrowClick(direction) {
     if (direction === "left") {
@@ -11,6 +13,28 @@ const Menu = () => {
       setActiveTab((prev) => (prev === 3 ? 0 : prev + 1));
     }
   }
+
+  useGSAP(() => {
+    gsap.from("#title", {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".details", {
+      y: 200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".cocktail", {
+      x: -150,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    });
+  }, [activeTab]);
 
   return (
     <section id="menu">
