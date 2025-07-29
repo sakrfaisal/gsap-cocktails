@@ -58,21 +58,21 @@ const About = () => {
         </div>
         <div className="top-grid">
           <div className="img-con col-span-3">
-            <img src="/images/abt1.png" alt="about-1" />
+            <img src="images/abt1.png" alt="about-1" />
           </div>
           <div className="img-con col-span-6">
-            <img src="/images/abt2.png" alt="about-2" />
+            <img src="images/abt2.png" alt="about-2" />
           </div>
           <div className="img-con col-span-3">
-            <img src="/images/abt5.png" alt="about-3" />
+            <img src="images/abt5.png" alt="about-3" />
           </div>
         </div>
         <div className="bottom-grid">
           <div className="img-con col-span-8">
-            <img src="/images/abt3.png" alt="about-4" />
+            <img src="images/abt3.png" alt="about-4" />
           </div>
           <div className="img-con col-span-4">
-            <img src="/images/abt4.png" alt="about-5" />
+            <img src="images/abt4.png" alt="about-5" />
           </div>
         </div>
       </div>

@@ -22,8 +22,8 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <img src="/images/footer-left-leaf.png" alt="footer-left-leaf" id="f-left-leaf" />
-      <img src="/images/footer-right-leaf.png" alt="footer-right-leaf" id="f-right-leaf" />
+      <img src="images/footer-left-leaf.png" alt="footer-left-leaf" id="f-left-leaf" />
+      <img src="images/footer-right-leaf.png" alt="footer-right-leaf" id="f-right-leaf" />
 
       <div className="content">
         <h2>Where to Find Us</h2>

@@ -38,8 +38,8 @@ const Menu = () => {
 
   return (
     <section id="menu">
-      <img src="/images/slider-left-leaf.png" alt="menu-left-leaf" id="m-left-leaf" />
-      <img src="/images/slider-right-leaf.png" alt="menu-right-leaf" id="m-right-leaf" />
+      <img src="images/slider-left-leaf.png" alt="menu-left-leaf" id="m-left-leaf" />
+      <img src="images/slider-right-leaf.png" alt="menu-right-leaf" id="m-right-leaf" />
 
       <h2 className="sr-only">Menu</h2>
 
@@ -60,15 +60,15 @@ const Menu = () => {
             <span>
               {sliderLists.find((item) => item.id === (activeTab === 0 ? 3 : activeTab - 1)).name}
             </span>
-            <img src="/images/right-arrow.png" alt="arrow-left" />
+            <img src="images/right-arrow.png" alt="arrow-left" />
           </button>
           <button onClick={() => handleArrowClick("right")}>
             <span>{sliderLists.find((item) => item.id === (activeTab + 1) % 4).name}</span>
-            <img src="/images/left-arrow.png" alt="arrow-right" />
+            <img src="images/left-arrow.png" alt="arrow-right" />
           </button>
         </div>
         <div className="cocktail">
-          <img src={`/images/drink${activeTab + 1}.png`} alt="cocktail" />
+          <img src={`images/drink${activeTab + 1}.png`} alt="cocktail" />
         </div>
         <div className="recipe">
           <div className="info">
